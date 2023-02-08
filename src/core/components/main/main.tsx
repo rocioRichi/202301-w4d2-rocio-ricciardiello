@@ -1,14 +1,18 @@
+import { useState } from "react";
 import Form1 from "../../../features/components/form1/form1";
+import Form2 from "../../../features/components/form2/form2";
 
-function main() {
+function Main() {
+  const [indexForm, setIndexForm] = useState(0);
+  const nextForm = (index: number) => {
+    console.log(index);
+    setIndexForm(index);
+  };
   return (
-    <div className="container">
-      <main className="main">
-        <ul className="gentlemen">
-          <Form1 />
-        </ul>
-      </main>
-    </div>
+    <main className="main">
+      {indexForm === 0 && <Form1 onNotify={nextForm} />}
+      {indexForm === 1 && <Form2 />}
+    </main>
   );
 }
-export default main;
+export default Main;

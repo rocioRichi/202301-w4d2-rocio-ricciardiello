@@ -1,11 +1,19 @@
 import { Form, FormProps } from "react-router-dom";
 import "./form1.scss";
 import Button from "../button/button";
+import { type } from "os";
 
-function Form1({ children }: FormProps) {
+type ChildrenProp = { onNotify: Function };
+
+function Form1({ onNotify }: ChildrenProp) {
+  const handleClick = () => {
+    onNotify(1);
+  };
+
   return (
     <>
       <fieldset>
+        <legend> Personal Data</legend>
         <div>
           <label>Name</label>
           <input type="text"></input>
@@ -40,7 +48,7 @@ function Form1({ children }: FormProps) {
           <input type="checkbox" name="n1"></input>
         </div>
       </fieldset>
-      <Button />
+      <Button onClick={handleClick} />
     </>
   );
 }
