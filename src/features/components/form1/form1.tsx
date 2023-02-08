@@ -1,7 +1,5 @@
-import { Form, FormProps } from "react-router-dom";
 import "./form1.scss";
 import Button from "../button/button";
-import { type } from "os";
 
 type ChildrenProp = { onNotify: Function };
 
