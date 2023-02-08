@@ -1,15 +1,47 @@
-import { Form } from "react-router-dom";
+import { Form, FormProps } from "react-router-dom";
+import "./form1.scss";
+import Button from "../button/button";
 
-function Form1() {
+function Form1({ children }: FormProps) {
   return (
-    <fieldset>
-      <legend> Personal Data</legend>
+    <>
+      <fieldset>
+        <div>
+          <label>Name</label>
+          <input type="text"></input>
+        </div>
+        <div>
+          <label>Surname</label>
+          <input type="text"></input>
+        </div>
 
-      <input type="checkbox" name="n1">
-        {" "}
-        ¿Desea recibir información de nuestra newsletter?
-      </input>
-    </fieldset>
+        <div>
+          <label>DOB</label>
+          <input type="date"></input>
+        </div>
+
+        <div>
+          <label>Female</label>
+          <input type="radio" name="gender"></input>
+        </div>
+
+        <div>
+          <label>Male</label>
+          <input type="radio" name="gender"></input>
+        </div>
+
+        <div>
+          <label>I would rather not to answer</label>
+          <input type="radio" name="gender"></input>
+        </div>
+
+        <div>
+          <label>¿Desea recibir información de nuestra newsletter?</label>
+          <input type="checkbox" name="n1"></input>
+        </div>
+      </fieldset>
+      <Button />
+    </>
   );
 }
 
